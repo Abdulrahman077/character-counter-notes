@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Little Notes | Blue Notebook</title>
+
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main notebook -->
+    <main class="notebook">
+
+        <!-- Decorative spiral binding -->
+        <div class="binding" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Notebook header -->
+        <header class="header">
+
+            <div class="top-row">
+                <p class="brand">✳ LITTLE NOTES</p>
+                <p class="page-number">MY JOURNAL · 01</p>
+            </div>
+
+            <div class="heading-row">
+                <div class="heading-text">
+                    <h1>A little space<br>to <span>think.</span></h1>
+
+                    <p class="subtitle">
+                        Collect your thoughts, one little sentence at a time.
+                    </p>
+                </div>
+
+                <!-- Simple cloud decoration -->
+                <div class="cloud-art" aria-hidden="true">
+                    <span class="cloud-circle circle-one"></span>
+                    <span class="cloud-circle circle-two"></span>
+                    <span class="cloud-circle circle-three"></span>
+                    <span class="cloud-base"></span>
+                    <span class="cloud-sparkle">✦</span>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Decorative sticky note -->
+        <div class="sticky-note">
+            <span class="note-star">✦</span>
+            <span>A calm mind<br>starts here.</span>
+        </div>
+
+        <!-- Writing area -->
+        <section class="writing-card">
+
+            <div class="writing-heading">
+                <label for="message">TODAY'S THOUGHTS</label>
+                <span class="date-label">a note to remember ♡</span>
+            </div>
+
+            <!-- Keep this textarea empty so the count starts at zero -->
+            <textarea id="message" maxlength="200" placeholder="Dear diary, today I want to..." aria-describedby="counter remaining warning"></textarea>
+
+            <!-- Character count and remaining count -->
+            <div class="counter-row">
+                <p id="counter" aria-live="polite">0 / 200 characters</p>
+                <p id="remaining">200 characters left</p>
+            </div>
+
+            <!-- Progress bar -->
+            <div
+                class="progress-track"
+                id="progressTrack"
+                role="progressbar"
+                aria-label="Character limit used"
+                aria-valuemin="0"
+                aria-valuemax="200"
+                aria-valuenow="0">
+
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <!-- Warning near the character limit -->
+            <p id="warning" aria-live="polite"></p>
+
+        </section>
+
+        <!-- Notebook footer -->
+        <footer class="footer">
+            <span class="footer-star" aria-hidden="true">✧</span>
+            <span>Written by me, saved in my little world.</span>
+            <span class="footer-heart" aria-hidden="true">♡</span>
+        </footer>
+
+    </main>
+
+    <!-- Connect the JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>

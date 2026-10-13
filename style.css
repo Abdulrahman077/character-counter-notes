@@ -1,0 +1,423 @@
+/* Apply consistent sizing to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Blue dotted background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 35px 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #354b65;
+
+    background-color: #eaf3fc;
+    background-image: radial-gradient(#c9def3 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+/* Main notebook cover */
+.notebook {
+    position: relative;
+    width: 610px;
+    max-width: 100%;
+    padding: 35px 38px 25px 58px;
+
+    background-color: #fffdf7;
+    border: 2px solid #c5d9ed;
+    border-radius: 12px 24px 24px 12px;
+
+    /* Soft shadow makes the notebook look lifted */
+    box-shadow:
+        8px 8px 0 #c9ddef,
+        14px 16px 30px rgba(49, 91, 132, 0.13);
+}
+
+/* Spiral binding on the left */
+.binding {
+    position: absolute;
+    top: 95px;
+    left: 13px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.binding span {
+    width: 22px;
+    height: 22px;
+
+    border: 3px solid #8eb6dd;
+    border-radius: 50%;
+    background-color: #eaf3fc;
+}
+
+/* Brand and page number */
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand {
+    margin: 0;
+    color: #527fa9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.page-number {
+    margin: 0;
+    color: #9aafc4;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* Heading and cloud illustration */
+.heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.heading-text {
+    min-width: 0;
+}
+
+h1 {
+    margin: 26px 0 12px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #344c67;
+}
+
+h1 span {
+    color: #6598c8;
+    font-style: italic;
+}
+
+/* Short description */
+.subtitle {
+    max-width: 340px;
+    margin: 0 0 25px;
+
+    color: #879bb0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Cloud made using simple CSS shapes */
+.cloud-art {
+    position: relative;
+    flex-shrink: 0;
+    width: 82px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.cloud-circle {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: #c7e2f8;
+}
+
+.circle-one {
+    width: 31px;
+    height: 31px;
+    top: 30px;
+    left: 8px;
+}
+
+.circle-two {
+    width: 42px;
+    height: 42px;
+    top: 15px;
+    left: 26px;
+    background-color: #d8ebfa;
+}
+
+.circle-three {
+    width: 30px;
+    height: 30px;
+    top: 32px;
+    left: 48px;
+}
+
+.cloud-base {
+    position: absolute;
+    top: 37px;
+    left: 10px;
+
+    width: 67px;
+    height: 24px;
+
+    background-color: #c7e2f8;
+    border-radius: 20px;
+}
+
+.cloud-sparkle {
+    position: absolute;
+    top: 4px;
+    right: 0;
+
+    color: #80acd5;
+    font-size: 20px;
+}
+
+/* Decorative blue sticky note */
+.sticky-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    width: fit-content;
+    margin: 0 0 25px auto;
+    padding: 12px 16px;
+
+    color: #4e779b;
+    background-color: #e1effc;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    line-height: 1.6;
+
+    transform: rotate(2deg);
+    box-shadow: 2px 4px 8px rgba(49, 91, 132, 0.08);
+}
+
+.note-star {
+    color: #6598c8;
+    font-size: 16px;
+}
+
+/* Writing paper section */
+.writing-card {
+    padding: 18px 18px 12px;
+
+    border: 1px dashed #bdd4e9;
+    border-radius: 8px;
+    background-color: #fffefa;
+}
+
+/* Label and small note */
+.writing-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.writing-heading label {
+    color: #527fa9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.7px;
+}
+
+.date-label {
+    color: #9aafc4;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    font-style: italic;
+}
+
+/* Writing area with notebook lines */
+textarea {
+    display: block;
+    width: 100%;
+    height: 175px;
+    padding: 8px 5px;
+
+    border: none;
+    border-radius: 0;
+    outline: none;
+    resize: vertical;
+
+    color: #405772;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 30px;
+
+    background-color: transparent;
+
+    /* Draw horizontal lines like notebook paper */
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 29px,
+        #e0ebf5 29px,
+        #e0ebf5 30px
+    );
+}
+
+/* Placeholder text */
+textarea::placeholder {
+    color: #a5b6c8;
+    font-style: italic;
+}
+
+/* Character counter row */
+.counter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+.counter-row p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#counter {
+    color: #8a9eb2;
+}
+
+#remaining {
+    color: #527fa9;
+}
+
+/* Progress bar background */
+.progress-track {
+    width: 100%;
+    height: 7px;
+    margin-top: 13px;
+
+    background-color: #e5eff8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Progress bar fill */
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(90deg, #a9d1f1, #5d95c7);
+    border-radius: 20px;
+
+    transition: width 0.2s ease, background 0.2s ease;
+}
+
+/* Warning message */
+#warning {
+    min-height: 18px;
+    margin: 10px 0 0;
+
+    color: #c15d68;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Notebook footer */
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 23px;
+    padding-top: 16px;
+    border-top: 1px solid #e4edf5;
+
+    color: #96a9bb;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.footer-star {
+    color: #6598c8;
+    font-size: 20px;
+}
+
+.footer-heart {
+    margin-left: auto;
+    color: #80acd5;
+    font-size: 22px;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 520px) {
+    body {
+        padding: 22px 14px;
+    }
+
+    .notebook {
+        padding: 27px 20px 22px 38px;
+    }
+
+    .binding {
+        top: 90px;
+        left: 8px;
+        gap: 35px;
+    }
+
+    .binding span {
+        width: 16px;
+        height: 16px;
+        border-width: 2px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .brand {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .page-number {
+        font-size: 9px;
+    }
+
+    .cloud-art {
+        transform: scale(0.8);
+        transform-origin: center;
+        margin-left: -10px;
+    }
+
+    .writing-card {
+        padding: 14px 12px 10px;
+    }
+
+    .writing-heading label {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .date-label {
+        font-size: 10px;
+    }
+
+    textarea {
+        height: 160px;
+        font-size: 13px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .progress-bar {
+        transition: none;
+    }
+}
